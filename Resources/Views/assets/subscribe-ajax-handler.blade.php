@@ -39,7 +39,7 @@
 							subscribe.messageContainer.show();
 							subscribe.messageContainerUl.find("li").remove();
 
-							subscribe.messageContainerUl.append('<li>' . trans('crevisoft::master.subscribeMessage') }} . '</li>')
+							subscribe.messageContainerUl.append('<li> {{ trans('crevisoft::master.subscribeMessage') }} </li>')
 
 							setTimeout(function() {
 								subscribe.messageContainer.fadeOut();

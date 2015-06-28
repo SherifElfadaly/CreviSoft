@@ -18,7 +18,7 @@
 
 				events: function () {
 					$(document).on('submit',contact.formClass ,function(e) {
-						e.preventDefault($(this).attr('action'));
+						e.preventDefault();
 						contact.data = new FormData(this);
 						contact.url  = $(this).attr('action');
 						contact.ajaxAction();
@@ -39,7 +39,7 @@
 							contact.messageContainer.show();
 							contact.messageContainerUl.find("li").remove();
 
-							contact.messageContainerUl.append('<li>' . trans('crevisoft::master.emailSuccess') }} . '</li>')
+							contact.messageContainerUl.append('<li> {{ trans('crevisoft::master.emailSuccess') }} </li>')
 
 							setTimeout(function() {
 								contact.messageContainer.fadeOut();
