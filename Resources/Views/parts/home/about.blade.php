@@ -1,6 +1,7 @@
 <!--Start Section About-us-->
+<a id="about"></a>
 <section class="about-us">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       {!! \CMS::widgets()->renderWidget('About Header', \Lang::locale()) !!}
     </div>

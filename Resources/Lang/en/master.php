@@ -13,4 +13,7 @@ return [
 	"readMore"         => "Read More",
 	"emailSuccess"     => "Your email had been sent.",
 	"subscribeMessage" => "Thanx for subscriptions.",
+	"siteMap"          => "Site Map",
+	"fastLinks"        => "Fast Links",
+	"Projects"         => "Projects",
 ];

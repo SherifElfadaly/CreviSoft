@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Seo meta tags -->
-    <title>{{ $seo->data['title'] }}</title>
-    <meta name="description" content="{{ $seo->data['description'] }}">
-    <meta name="keywords" content="{{ $seo->data['keywords'] }}">
-    <meta name="author" content="{{ $seo->data['author'] }}">
-
+    @if($seo)
+        <title>{{ $seo->data['title'] }}</title>
+        <meta name="description" content="{{ $seo->data['description'] }}">
+        <meta name="keywords" content="{{ $seo->data['keywords'] }}">
+        <meta name="author" content="{{ $seo->data['author'] }}">
+    @endif
+    
     <!-- Bootstrap -->
     <link href="{{ url('cms/app/Modules/Crevisoft/Resources/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ url('cms/app/Modules/Crevisoft/Resources/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ url('cms/app/Modules/Crevisoft/Resources/css/animate.css') }}" rel="stylesheet">
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{ url('cms/app/Modules/Crevisoft/Resources/js/jquery-1.11.2.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,17 +30,19 @@
   </head>
 
   <body>
-    
-    <!-- Start Header Menu -->
-    {!! \CMS::menus()->renderMenu('header_menu', \Lang::locale(), 'templates.menus.header_menu')  !!} 
-    <!-- End Header Menu -->
+    <a id="top"></a>
+
+    @if($page->page_slug !== "home")
+        <!-- Start Fixed Header Menu -->
+        {!! \CMS::menus()->renderMenu('header_menu', \Lang::locale(), 'templates.menus.fixed_header_menu')  !!} 
+        <!-- End Fixed Header Menu -->
+    @endif
 
     @yield('content')
 
     @include('crevisoft::parts.footer')
-    
+        
     <!--Start Section scrolltotop-->
-    
     <div class="scrolltotop">
       <a href="#top"><i class="fa fa-chevron-up"></i></a>
     </div>

@@ -20,6 +20,14 @@ class CreateCrevisoftSliders extends Migration
 				'is_active'   => 1,
 				'template'    => 'news',
 				'theme'       => 'crevisoft',
+				],
+				[
+				'title'       => 'Main',
+				'description' => 'Main Slider',
+				'slider_slug' => 'main',
+				'is_active'   => 1,
+				'template'    => 'main',
+				'theme'       => 'crevisoft',
 				]
 			]);
 	}

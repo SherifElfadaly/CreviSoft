@@ -14,9 +14,11 @@
 						</div>
 						<div class="col-lg-7  col-md-8 col-sm-8  col-xs-12 pull-right">
 							<div class="media-body">
-								<p>
-								{!! $slideShow->description !!}<a href="{{ $slideShow->link }}">{{ trans('crevisoft::master.readMore') }}</a>
-								</p>
+								<a href="{{ $slideShow->link }}">
+									<p>
+										{!! $slideShow->description !!}
+									</p>
+								</a>
 							</div>
 						</div>
 					</div>

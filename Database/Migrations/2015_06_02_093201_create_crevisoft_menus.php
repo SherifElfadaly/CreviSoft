@@ -28,12 +28,33 @@ class CreateCrevisoftMenus extends Migration
 				'theme'       => 'crevisoft',
 				],
 				[
-				'title'       => 'Footer Menu',
-				'menu_slug'   => 'footer_menu',
-				'description' => 'Footer Menu',
-				'template'    => 'footer_menu',
+				'title'       => 'Footer Site Map Menu',
+				'menu_slug'   => 'footer_site_map_menu',
+				'description' => 'Footer Site Map Menu',
+				'template'    => 'footer_site_map_menu',
 				'theme'       => 'crevisoft',
-				]
+				],
+				[
+				'title'       => 'Footer Fast Links Menu',
+				'menu_slug'   => 'footer_fast_links_menu',
+				'description' => 'Footer Fast Links Menu',
+				'template'    => 'footer_fast_links_menu',
+				'theme'       => 'crevisoft',
+				],
+				[
+				'title'       => 'Footer Projects Menu',
+				'menu_slug'   => 'footer_projects_menu',
+				'description' => 'Footer Projects Menu',
+				'template'    => 'footer_projects_menu',
+				'theme'       => 'crevisoft',
+				],
+				[
+				'title'       => 'Footer Services Menu',
+				'menu_slug'   => 'footer_services_menu',
+				'description' => 'Footer Services Menu',
+				'template'    => 'footer_services_menu',
+				'theme'       => 'crevisoft',
+				],
 			]);
 	}
 

@@ -13,9 +13,36 @@
 
 <div class="container">
   <div class="row">
-    <h2>{{ trans('crevisoft::master.title') }}</h2>
-    <div class="col-lg-6 ">
+    <div class="col-lg-6 col-md-12  col-sm-12 col-xs-12 contact-details pull-right ">
+      <div class="row">
+        <div class="col-lg-12 pull-right wow fadeInUp" data-wow-delay="1.1s">
+          <h2>{{ trans('crevisoft::master.title') }}</h2>
+        </div>
+      </div>
+      <div class="row">
+        <ul class="list-unstyled">
+          <li class="wow fadeInUp" data-wow-delay="1.2s">
+            <span class="glyphicon glyphicon-home"></span>
+            <a href="{{ url('/') }}">www.Crevisoft.com</a>
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.3s">
+            <span class="glyphicon glyphicon-map-marker"></span>
+            {{ \CMS::coreModuleSettings()->getSettingValuByKey('Address', 'crevisoft') }}
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.4s">
+            <span class="glyphicon glyphicon-earphone"></span>
+            {{ \CMS::coreModuleSettings()->getSettingValuByKey('Telephone', 'crevisoft') }}
+          </li>
+          <li class="wow fadeInUp" data-wow-delay="1.5s">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <a href="mailto:{{ \CMS::coreModuleSettings()->getSettingValuByKey('Email', 'crevisoft') }}">{{ \CMS::coreModuleSettings()->getSettingValuByKey('Email', 'crevisoft') }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
+    <div class="col-lg-6 col-md-12  col-sm-12 col-xs-12 ">
+      
       <div class="alert alert-danger hidden" id="contactErrormessageContainer">
         <ul>
         </ul>
@@ -46,33 +73,6 @@
           </div>
         </div>
       </form>
-    </div>
-    <div class="col-lg-6 contact-details ">
-      <ul class="list-unstyled">
-        <li class="wow fadeInUp" data-wow-delay="1.2s">
-          <span class="glyphicon glyphicon-home"></span>
-          www.Crevisoft.com
-        </li>
-        <li class="wow fadeInUp" data-wow-delay="1.3s">
-          <span class="glyphicon glyphicon-map-marker"></span>
-          {{ \CMS::coreModuleSettings()->getSettingValuByKey('Address', 'crevisoft') }}
-        </li>
-        <li class="wow fadeInUp" data-wow-delay="1.4s">
-          <span class="glyphicon glyphicon-earphone"></span>
-          {{ \CMS::coreModuleSettings()->getSettingValuByKey('Telephone', 'crevisoft') }}
-        </li>
-        <li class="wow fadeInUp" data-wow-delay="1.5s">
-          <span class="glyphicon glyphicon-envelope"></span>
-          <a href="mailto:{{ \CMS::coreModuleSettings()->getSettingValuByKey('Email', 'crevisoft') }}">{{ \CMS::coreModuleSettings()->getSettingValuByKey('Email', 'crevisoft') }}</a>
-        </li>
-      </ul>
-    </div>
-    <div class="social wow fadeInUp" data-wow-delay="1.6s">
-      <a href="{{ \CMS::coreModuleSettings()->getSettingValuByKey('FaceBook', 'crevisoft') }}"><i class="fa fa-facebook wow fadeInUp" data-wow-delay="1.4s"></i></a>
-      <a href="{{ \CMS::coreModuleSettings()->getSettingValuByKey('Twitter', 'crevisoft') }}"><i class="fa fa-twitter wow fadeInDown" data-wow-delay="1.6s"></i></a>
-      <a href="{{ \CMS::coreModuleSettings()->getSettingValuByKey('Google', 'crevisoft') }}"><i class="fa fa-google-plus wow fadeInUp" data-wow-delay="1.8s"></i></a>
-      <a href="{{ \CMS::coreModuleSettings()->getSettingValuByKey('Youtube', 'crevisoft') }}"><i class="fa fa-youtube-play wow fadeInDown" data-wow-delay="2s"></i></a>
-      <a href="{{ \CMS::coreModuleSettings()->getSettingValuByKey('Instagram', 'crevisoft') }}"><i class="fa  fa-instagram wow fadeInUp" data-wow-delay="2.2s"></i></a>
     </div>
   </div>
 </div>

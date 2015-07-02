@@ -2,10 +2,13 @@
 	<div class="media">
 		<div class="media-left media-middle">
 			<a href="{{ $widget->link }}">
-				<img class="media-object" src="{{ $widget->widgetImage->path }}" alt="{{ $widget->widgetImage->caption }}">
+      			@if($widget->widgetImage)
+					<img class="media-object" src="{{ $widget->widgetImage->path }}" alt="{{ $widget->widgetImage->caption }}">
+				@endif
 			</a>
 		</div>
 		<div class="media-body">
+            <h3>{!! $widget->data['title'] !!}</h3>
 			<p>{!! $widget->data['description'] !!}</p>
 		</div>
 	</div>

@@ -13,4 +13,7 @@ return [
 	"readMore"         => "اقرأالمزيد",
 	"emailSuccess"     => "تم ارسال الرسالة بنجاح.",
 	"subscribeMessage" => "شكرا علي المتابعة.",
+	"siteMap"          => "خريطه الموقع",
+	"fastLinks"        => "روابط سريعة",
+	"Projects"         => "مشاريع",
 ];

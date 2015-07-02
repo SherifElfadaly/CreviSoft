@@ -48,6 +48,16 @@ class CreateCrevisoftWidgets extends Migration
 				'template'         => 'subscription',
 				'theme'            => 'crevisoft',
 				],
+				[
+				'widget_type_name' => 'About Us Page',
+				'template'         => 'about_us_page',
+				'theme'            => 'crevisoft',
+				],
+				[
+				'widget_type_name' => 'Services Page',
+				'template'         => 'services_page',
+				'theme'            => 'crevisoft',
+				]
 			]);
 	}
 
