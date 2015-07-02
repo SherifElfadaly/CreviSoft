@@ -16,4 +16,7 @@ return [
 	"siteMap"          => "Site Map",
 	"fastLinks"        => "Fast Links",
 	"Projects"         => "Projects",
+	"search"           => "Search",
+	"archive"          => "Archive",
+	"recentNews"       => "Recent News",
 ];

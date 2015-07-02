@@ -16,4 +16,7 @@ return [
 	"siteMap"          => "خريطه الموقع",
 	"fastLinks"        => "روابط سريعة",
 	"Projects"         => "مشاريع",
+	"search"           => "يحث",
+	"archive"          => "ارشيف",
+	"recentNews"       => "أحدث الأخبار",
 ];
