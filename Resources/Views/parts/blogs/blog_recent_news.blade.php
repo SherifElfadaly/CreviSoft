@@ -11,7 +11,7 @@
 				@endif
 			</div>
 			<div class="col-md-8 recent-news-inner">
-				<h3><a href="{{ url('news', [$content->id]) }}">{!! $content->data['title'] !!}</a></h3>
+				<h3><a href="{{ url('contentitem/news', [$content->id]) }}">{!! $content->data['title'] !!}</a></h3>
 				<p>{!! $content->data['description'] !!}</p>
 			</div>
 		</div>

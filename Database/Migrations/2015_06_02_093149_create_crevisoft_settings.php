@@ -75,12 +75,12 @@ class CreateCrevisoftSettings extends Migration
 				],
 				[
 				'key'           => 'Longitude',
-				'input_type'    => 'decimal',
+				'input_type'    => 'text',
 				'module_key'    => 'crevisoft',
 				],
 				[
-				'key'           => 'Longitude',
-				'input_type'    => 'decimal',
+				'key'           => 'Latitude',
+				'input_type'    => 'text',
 				'module_key'    => 'crevisoft',
 				],
 			]);

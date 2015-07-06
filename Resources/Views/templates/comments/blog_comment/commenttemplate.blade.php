@@ -1,93 +1,55 @@
-<li id="comment-tree">
-  <article class="row" id="{{ $commentTemplateName }}singleComment">
-    <div class="col-md-2 col-sm-2 hidden-xs">
-      <figure class="thumbnail">
-       <img class="img-responsive" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt='{{ $comment->name }}'/>
-       <figcaption class="text-center">{{ $comment->name }}</figcaption>
-      </figure>
-    </div>
-    <div class="col-md-10 col-sm-10">
-      <div class="panel panel-default arrow left">
-
-        <div class="panel-heading">
-         <strong> {{ $comment->name }} </strong>
-         {{ $comment->comment_title }}  
-         <i>
-           <span 
-           class          ="text-muted" 
-           data-toggle    ="tooltip" 
-           data-placement ="left" 
-           title          ="{{ $comment->created_at }}" >
-           @if ($comment->edited === '1')
-            Edited
-            {{ $comment->updated_at->diffForHumans() }} 
-           @else
-            {{ $comment->created_at->diffForHumans() }}
-           @endif 
-          </span>
-         </i>
-       </div>
-
-       <div class="panel-body">
-
-         <div class="comment-post">
-
-           <p> 
-             @if($comment->status == 'accepted')
-              {{ $comment->comment_content }}
-             @elseif($comment->status == 'pending')
-              comment is waiting for approval.
-             @endif
-           </p>
-           <br>
-
-           @if ((Auth::check() && Auth::user()->id === $comment->user_id) || 
+<div class="media" id="{{ $commentTemplateName }}singleComment">
+  <a href="#" class="pull-right">
+    <img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt='{{ $comment->name }}' class="media-object">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">
+      {{ $comment->comment_title }}
+      <span>
+       @if ($comment->edited === '1')
+         Edited
+         {{ $comment->updated_at->diffForHumans() }} 
+       @else
+         {{ $comment->created_at->diffForHumans() }}
+       @endif 
+        /
+       @if ((Auth::check() && Auth::user()->id === $comment->user_id) || 
            (Auth::guest() && Request::cookie('ip_token') !== null && Request::cookie('ip_token') === $comment->ip_token))
 
-             <div class="alert alert-danger hidden" id="{{ $commentTemplateName }}deleteErrormessageContainer">
-               <strong>Whoops!</strong> There were some problems with your input.<br><br>
-               <ul>
-               </ul>
-             </div>
+           <div class="alert alert-danger hidden" id="{{ $commentTemplateName }}deleteErrormessageContainer">
+             <strong>Whoops!</strong> There were some problems with your input.<br><br>
+             <ul>
+             </ul>
+           </div>
 
-             <p class="text-left"> 
-               <p class="text-right">
-                 <a data-toggle="collapse" href="#{{ $comment->id }}edit">
-                   <i class="fa fa-edit"></i>
-                   Edit
-                   <a href='{{ url("admin/comment/deletecomment/$comment->id") }}' class="{{ $commentTemplateName }}delete_comment_link">
-                     <i class="fa fa-remove"></i>
-                     Delete
-                   </a> 
-                 </a>
-               </p>
-               <div class="collapse" id="{{ $comment->id }}edit">
-                 <div class="well">
-                   @include('comment::comments.parts.editcommentform', ['comment' => $comment])
-                 </div>
-               </div>
-             </p>
+           <a data-toggle="collapse" data-target="#{{ $comment->id }}edit">
+             Edit
+             <a href='{{ url("admin/comment/deletecomment/$comment->id") }}' class="{{ $commentTemplateName }}delete_comment_link">
+               Delete
+             </a> 
+           </a>
 
             @else
-             <p class="text-right">
-               <a data-toggle="collapse" href="#{{ $comment->id }}reply">
-                 <i class="fa fa-reply"></i>
-                 Reply
-               </a>
-             </p>
-             <div class="collapse" id="{{ $comment->id }}reply">
-               <div class="well">
-                 @include('comment::comments.parts.addcommentform', ['parent_id' => $comment->id])
-               </div>
-             </div>
-            @endif
+            <a data-toggle="collapse" data-target="#{{ $comment->id }}reply">
+             Reply
+            </a>
+        @endif
 
-         </div>        
-       </div>
+     </span>
+    </h4>
+    <p>
+      @if($comment->status == 'accepted')
+        {{ $comment->comment_content }}
+      @elseif($comment->status == 'pending')
+        comment is waiting for approval.
+      @endif
+    </p>
+    <div class="collapse" id="{{ $comment->id }}edit">
+     @include('crevisoft::templates.comments.blog_comment.editcommentform', ['comment' => $comment])
      </div>
-   </div>
-  </article>
-  <ul>
-    {!! \CMS::comments()->getCommentTree($comment->replies, $commentOwner, $item, $itemId, $commentTemplateName, $comment->id) !!}
-  </ul>
-</li>
+     <div class="collapse" id="{{ $comment->id }}reply">
+      @include('crevisoft::templates.comments.blog_comment.addcommentform', ['parent_id' => $comment->id])
+    </div>
+    {!! \CMS::comments()->getCommentTree($comment->replies, $commentOwner, $item, $itemId, $path, $perPage, $commentTemplateName, $comment->id) !!}
+  </div>
+</div>

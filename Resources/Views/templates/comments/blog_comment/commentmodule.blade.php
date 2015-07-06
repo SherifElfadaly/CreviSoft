@@ -1,11 +1,11 @@
 <!-- comments -->
-<h2 class="page-header">Comments</h2>
-<section class="comment-list">
-  <br>
-  <div class="well" id="{{ $commentTemplateName }}CommentContent">
+<h2>{{ trans('crevisoft::master.comments') }}</h2>
+<div class="comments" id="{{ $commentTemplateName }}CommentContent">
     {!! $commentTree !!}
-  </div>
+</div>
 
+<div class="post-comment padding-top-40">
+  <h3>{{ trans('crevisoft::master.leaveComment') }}</h3>
   <div class="alert alert-danger hidden" id="{{ $commentTemplateName }}addErrormessageContainer">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
     <ul>
@@ -16,11 +16,10 @@
     <ul>
     </ul>
   </div>
-  
   @if($unrigesteredUserCanComment === 'True' || Auth::check())
-    @include('comment::comments.parts.addcommentform', ['parent_id' => 0])
+    @include('crevisoft::templates.comments.blog_comment.addcommentform', ['parent_id' => 0])
   @endif
-</section>
+</div>
 
 
 <style type="text/css"> 

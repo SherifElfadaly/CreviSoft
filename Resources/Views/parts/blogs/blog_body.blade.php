@@ -10,7 +10,7 @@
 
 		<div class="col-md-8 col-sm-8">
 			<h2>
-				<a href="{{ url('blog', [$content->id]) }}">{!! $content->data['title'] !!}</a>
+				<a href="{{ url('contentitem/blog', [$content->id]) }}">{!! $content->data['title'] !!}</a>
 			</h2>
 
 			<ul class="blog-info">
@@ -18,14 +18,14 @@
 				<li><i class="fa fa-calendar"></i> {{ $content->created_at->toDayDateTimeString() }}</li>
 				<li><i class="fa fa-comments"></i> {{ $content->commentsCount }}</li>
 				@foreach($content->tags as $tag)
-					<a href="{{ url('tag', [$tag->id]) }}">
+					<a href="{{ url('tag/blogs/Blog', [$tag->id]) }}">
 						<li><i class="fa fa-tags"></i>{{ $tag->tag_name }}</li>
 					</a>
 				@endforeach
 			</ul>
 
 			<p>{!! $content->data['description'] !!}</p>
-			<a href="{{ url('blog', [$content->id]) }}" class="more"> {{ trans('crevisoft::master.readMore') }} <i class="icon-angle-right"></i></a>
+			<a href="{{ url('contentitem/blog', [$content->id]) }}" class="more"> {{ trans('crevisoft::master.readMore') }} <i class="icon-angle-right"></i></a>
 		</div>
 	</div>
 	<hr class="blog-post-sep">

@@ -4,7 +4,7 @@
 	<ul>
 		@foreach(\CMS::tags()->all() as $tag)
 			<li>
-				<a href="{{ url('tag' ,[$tag->id]) }}">
+				<a href="{{ url('tag/blogs/Blog' ,[$tag->id]) }}">
 					<i class="fa fa-tags"></i>{{ $tag->tag_name }}
 				</a>
 			</li>

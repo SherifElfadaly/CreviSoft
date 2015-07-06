@@ -19,4 +19,7 @@ return [
 	"search"           => "Search",
 	"archive"          => "Archive",
 	"recentNews"       => "Recent News",
+	"comments"         => "Comments",
+	"leaveComment"     => "LeaveComment",
+	"update"	       => "Update",
 ];

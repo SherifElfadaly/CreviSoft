@@ -19,4 +19,7 @@ return [
 	"search"           => "يحث",
 	"archive"          => "ارشيف",
 	"recentNews"       => "أحدث الأخبار",
+	"comments"         => "تعليقات",
+	"leaveComment"     => "اترك تعليق",
+	"update"     	   => "تعديل",
 ];
